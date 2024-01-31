@@ -1,24 +1,31 @@
-<script setup lang="ts">
-const links = [
-  {
-    short_link: "234jlsfsf",
-    full_link: "https://vueschool.io",
-    views: 3,
-    id: 1,
-  },
-  {
-    short_link: "adfaowerw",
-    full_link: "https://google.com",
-    views: 1,
-    id: 2,
-  },
-  {
-    short_link: "234sfdjaip",
-    full_link: "https://vuejsnation.com/",
-    views: 0,
-    id: 3,
-  },
-];
+<script setup>
+import axios from "axios";
+const links = await axios.get("/links");
+console.log("LINKS:",links);
+definePageMeta({
+  middleware: ["auth"]
+});
+
+// const links = [
+//   {
+//     short_link: "234jlsfsf",
+//     full_link: "https://vueschool.io",
+//     views: 3,
+//     id: 1,
+//   },
+//   {
+//     short_link: "adfaowerw",
+//     full_link: "https://google.com",
+//     views: 1,
+//     id: 2,
+//   },
+//   {
+//     short_link: "234sfdjaip",
+//     full_link: "https://vuejsnation.com/",
+//     views: 0,
+//     id: 3,
+//   },
+// ];
 </script>
 <template>
   <div>
@@ -47,7 +54,7 @@ const links = [
           </tr>
         </thead>
         <tbody>
-          <tr v-for="link in links">
+          <tr v-for="link in links.data.data" :key="link.id">
             <td>
               <a :href="link.full_link" target="_blank">
                 {{ link.full_link.replace(/^http(s?):\/\//, "") }}</a
