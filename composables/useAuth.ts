@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 interface User {
     name: StaticRange,
     email: string,
@@ -47,7 +47,6 @@ async function initUser(){
 };
 async function getUser(): Promise<User | null>{
     if(user.value) return user.value;
-
     try {
         const res = await axios.get("/user");
         const user = await res.data;
@@ -59,7 +58,8 @@ async function getUser(): Promise<User | null>{
             updated_at: new Date(user.updated_at),
         }
     }catch(error){
-        return null;
+      console.log("error:", error);
+      return null;
     }
 }
 

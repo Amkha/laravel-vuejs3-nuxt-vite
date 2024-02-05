@@ -9,6 +9,7 @@ const form = ref({
   password: "",
 });
 const { login } = useAuth();
+
 </script>
 <template>
   <div class="login">

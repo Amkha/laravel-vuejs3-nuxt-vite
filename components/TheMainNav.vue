@@ -9,8 +9,10 @@
       </NuxtLink>
     </div>
     <div>
+      <NuxtLink to="/login">Login</NuxtLink>
       <NuxtLink to="/me">My Profile</NuxtLink>
       <NuxtLink to="/links">Links</NuxtLink>
+      <NuxtLink to="/users">Users</NuxtLink>
       <NuxtLink to="/logout">
         <IconLogout class="inline" />
       </NuxtLink>
