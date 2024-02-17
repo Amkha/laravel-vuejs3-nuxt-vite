@@ -1,4 +1,4 @@
-# "Laravel Backends for Vue.js 3" Front End Source Code use for experiment only
+# Vue.js 3, Nuxt.js, Vite project for Front End Source Code use for experiment only
 
 
 ## Setup
