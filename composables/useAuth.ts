@@ -13,7 +13,7 @@ interface User {
 const user = ref<User | null>();
 export const useAuth = ()=> {
 interface LoginPayload {
-    email: String;
+    email: string;
     password: string;
   };
 async function login(payload: LoginPayload){
